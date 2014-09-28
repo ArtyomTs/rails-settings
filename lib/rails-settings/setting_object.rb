@@ -44,6 +44,14 @@ module RailsSettings
       end
     end
 
+    def keys
+      if value.blank?
+        _target_class.default_settings[var.to_sym].keys
+      else
+        value.keys
+      end
+    end
+
   protected
     if ActiveRecord::VERSION::MAJOR < 4
       # Simulate attr_protected by removing all regular attributes
