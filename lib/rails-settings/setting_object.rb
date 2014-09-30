@@ -48,7 +48,7 @@ module RailsSettings
       if value.blank?
         _target_class.default_settings[var.to_sym].keys
       else
-        value[var].keys
+        value.keys
       end
     end
 
